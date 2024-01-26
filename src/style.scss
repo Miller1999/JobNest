@@ -1,0 +1,13 @@
+@import url("../node_modules/normalize.css/normalize.css");
+// Colors
+$primary-color: hsl(180, 29%, 50%);
+$background: hsl(180, 52%, 96%);
+$filterTablets: hsl(180, 31%, 95%);
+$DarkCyan: hsl(180, 8%, 52%);
+$VeryDarkCyan: hsl(180, 14%, 20%);
+// Font
+$Spartan: "League Spartan", sans-serif;
+
+html {
+	font-size: 62.5%;
+}
