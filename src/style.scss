@@ -8,6 +8,107 @@ $VeryDarkCyan: hsl(180, 14%, 20%);
 // Font
 $Spartan: "League Spartan", sans-serif;
 
+* {
+	box-sizing: border-box;
+	font-size: 1.5rem;
+	font-family: $Spartan;
+}
 html {
 	font-size: 62.5%;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+}
+header {
+	width: 100%;
+	height: 30vh;
+	max-height: 200px;
+	background-color: $primary-color;
+	background-image: url("./assets/images/bg-header-mobile.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5rem 0rem;
+	gap: 5rem;
+}
+.card {
+	position: relative;
+	width: 90vw;
+	max-width: 500px;
+	border-left: 5px $primary-color solid;
+	border-radius: 5px;
+	padding: 2rem;
+	box-shadow: 10px 10px 24px -8px rgba(0, 0, 0, 0.25);
+	.card__image {
+		position: absolute;
+		top: -25px;
+		left: 20px;
+		img {
+			width: 50px;
+		}
+	}
+	.card__title {
+		display: flex;
+		align-items: center;
+		gap: 4rem;
+		.title--business {
+			color: $primary-color;
+			font-weight: 700;
+		}
+		div {
+			display: flex;
+			gap: 1rem;
+			span {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				padding: 0.2rem 0.5rem;
+				border-radius: 10px;
+			}
+			.new {
+				background-color: $primary-color;
+			}
+			.featured {
+				background-color: $VeryDarkCyan;
+			}
+		}
+	}
+	.title--job {
+		font-size: 1.5rem;
+	}
+	.card__description {
+		display: flex;
+		gap: 1rem;
+		p {
+			color: $DarkCyan;
+		}
+	}
+	.container--tags {
+		display: grid;
+		border-top: 1px $DarkCyan solid;
+		padding-top: 2rem;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1rem;
+		button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			border: none;
+			color: $primary-color;
+		}
+		button:hover {
+			background-color: $primary-color;
+			color: white;
+			cursor: pointer;
+		}
+	}
 }
