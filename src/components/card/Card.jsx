@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Button from "../button/Button";
 
 const Card = (props) => {
 	const {
@@ -14,6 +15,9 @@ const Card = (props) => {
 		location,
 		languages,
 		tools,
+		filter,
+		setFilter,
+		setEmpty,
 	} = props;
 	return (
 		<article className="card">
@@ -41,13 +45,30 @@ const Card = (props) => {
 					<p>{location}</p>
 				</div>
 				<div className="container--tags">
-					<button>{role}</button>
-					<button>{level}</button>
+					<Button setEmpty={setEmpty} filter={filter} setFilter={setFilter}>
+						{role}
+					</Button>
+					<Button setEmpty={setEmpty} filter={filter} setFilter={setFilter}>
+						{level}
+					</Button>
 					{languages.map((language) => {
-						return <button key={language}>{language}</button>;
+						return (
+							<Button
+								setEmpty={setEmpty}
+								filter={filter}
+								setFilter={setFilter}
+								key={language}
+							>
+								{language}
+							</Button>
+						);
 					})}
 					{tools.map((tool) => {
-						return <button key={tool}>{tool}</button>;
+						return (
+							<Button filter={filter} setFilter={setFilter} key={tool}>
+								{tool}
+							</Button>
+						);
 					})}
 				</div>
 			</div>

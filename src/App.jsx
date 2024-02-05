@@ -1,13 +1,19 @@
 import Header from "./components/header/Header";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import "./style.scss";
 import Card from "./components/card/Card";
 import Data from "./data.json";
 function App() {
-	console.log(Data[0].company);
+	const [filter, setFilter] = useState([]);
+	const [isEmpty, setEmpty] = useState(true);
 	return (
 		<Fragment>
-			<Header />
+			<Header
+				setFilter={setFilter}
+				filter={filter}
+				isEmpty={isEmpty}
+				setEmpty={setEmpty}
+			/>
 			<main>
 				{Data.map((item) => {
 					return (
@@ -25,6 +31,9 @@ function App() {
 							level={item.level}
 							languages={item.languages}
 							tools={item.tools}
+							filter={filter}
+							setFilter={setFilter}
+							setEmpty={setEmpty}
 						/>
 					);
 				})}
