@@ -17,7 +17,6 @@ function App() {
 			filter.includes(item.tools[0]) ||
 			filter.includes(item.tools[1])
 	);
-	console.log(dataFiltered);
 	if (!isEmpty) {
 		return (
 			<Fragment>
