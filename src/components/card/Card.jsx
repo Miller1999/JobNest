@@ -24,26 +24,29 @@ const Card = (props) => {
 			<div className="card__image">
 				<img src={logo} />
 			</div>
-			<div>
-				<div className="card__title">
-					<p className="title--business">{company}</p>
-					<div>
-						{old ? <span className="new">NEW!</span> : <Fragment></Fragment>}
-						{featured ? (
-							<span className="featured">FEATURED</span>
-						) : (
-							<Fragment></Fragment>
-						)}
+			<div className="card__container--description">
+				<div className="card__container--title">
+					<div className="card__title">
+						<p className="title--business">{company}</p>
+						<div>
+							{old ? <span className="new">NEW!</span> : <Fragment></Fragment>}
+							{featured ? (
+								<span className="featured">FEATURED</span>
+							) : (
+								<Fragment></Fragment>
+							)}
+						</div>
+					</div>
+					<h1 className="title--job">{position}</h1>
+					<div className="card__description">
+						<p>{postedAt}</p>
+						<p>·</p>
+						<p>{contract}</p>
+						<p>·</p>
+						<p>{location}</p>
 					</div>
 				</div>
-				<h1 className="title--job">{position}</h1>
-				<div className="card__description">
-					<p>{postedAt}</p>
-					<p>·</p>
-					<p>{contract}</p>
-					<p>·</p>
-					<p>{location}</p>
-				</div>
+
 				<div className="container--tags">
 					<Button setEmpty={setEmpty} filter={filter} setFilter={setFilter}>
 						{role}
@@ -65,7 +68,12 @@ const Card = (props) => {
 					})}
 					{tools.map((tool) => {
 						return (
-							<Button filter={filter} setFilter={setFilter} key={tool}>
+							<Button
+								setEmpty={setEmpty}
+								filter={filter}
+								setFilter={setFilter}
+								key={tool}
+							>
 								{tool}
 							</Button>
 						);
